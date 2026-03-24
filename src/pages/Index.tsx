@@ -193,7 +193,7 @@ export default function Index() {
       </header>
 
       {/* ── HERO ── */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <img
           src={heroPrinter}
           alt="Impressora de grande formato"
@@ -203,12 +203,12 @@ export default function Index() {
         />
         <div className="absolute inset-0" style={{ background: "var(--gradient-hero)" }} />
 
-        <div className="relative z-10 text-center px-6">
+        <div className="relative z-10 text-center px-4 sm:px-6 max-w-5xl mx-auto pt-24 pb-20">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-gold-light font-semibold tracking-[0.3em] uppercase text-sm mb-4"
+            className="text-gold-light font-semibold tracking-[0.2em] sm:tracking-[0.3em] uppercase text-xs sm:text-sm mb-4"
           >
             Gráfica Profissional desde 2002
           </motion.p>
@@ -217,7 +217,7 @@ export default function Index() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="font-display text-7xl md:text-[10rem] leading-none mb-6 text-white"
+            className="font-display text-5xl sm:text-7xl md:text-[9rem] leading-none mb-6 text-white"
           >
             PROCURA POR UMA{" "}
             <span className="text-gradient-gold">GRÁFICA?</span>
@@ -227,7 +227,7 @@ export default function Index() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.7 }}
-            className="text-white/80 text-lg md:text-xl max-w-xl mx-auto mb-10"
+            className="text-white/80 text-base sm:text-lg md:text-xl max-w-xl mx-auto mb-8 sm:mb-10"
           >
             Impressão de alta qualidade, banners, cartões e muito mais — tudo com acabamento profissional.
           </motion.p>
@@ -236,11 +236,11 @@ export default function Index() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.9 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center"
           >
             <a
               href="#servicos"
-              className="bg-gradient-gold text-primary-foreground px-8 py-4 rounded-full font-bold text-lg hover:opacity-90 transition-all shadow-gold hover:scale-105 duration-200"
+              className="bg-gradient-gold text-primary-foreground px-7 py-3.5 sm:px-8 sm:py-4 rounded-full font-bold text-base sm:text-lg hover:opacity-90 transition-all shadow-gold hover:scale-105 duration-200"
             >
               Ver Serviços
             </a>
@@ -248,7 +248,7 @@ export default function Index() {
               href="https://wa.me/5500000000000"
               target="_blank"
               rel="noreferrer"
-              className="border border-gold text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-gradient-gold hover:border-transparent transition-all duration-200"
+              className="border border-gold text-white px-7 py-3.5 sm:px-8 sm:py-4 rounded-full font-bold text-base sm:text-lg hover:bg-gradient-gold hover:border-transparent transition-all duration-200"
             >
               Pedir Orçamento
             </a>
@@ -270,9 +270,9 @@ export default function Index() {
       </section>
 
       {/* ── STATS ── */}
-      <section className="py-14 border-y border-border bg-card">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+      <section className="py-10 sm:py-14 border-y border-border bg-card">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-3 gap-4 sm:gap-8 text-center">
             {stats.map((s, i) => (
               <motion.div
                 key={i}
@@ -282,8 +282,8 @@ export default function Index() {
                 viewport={{ once: true }}
                 custom={i}
               >
-                <p className="font-display text-5xl text-gradient-gold">{s.value}</p>
-                <p className="text-muted-foreground text-sm mt-2 font-medium uppercase tracking-wider">{s.label}</p>
+                <p className="font-display text-3xl sm:text-5xl text-gradient-gold">{s.value}</p>
+                <p className="text-muted-foreground text-xs sm:text-sm mt-2 font-medium uppercase tracking-wider">{s.label}</p>
               </motion.div>
             ))}
           </div>
@@ -291,12 +291,12 @@ export default function Index() {
       </section>
 
       {/* ── QUEM SOMOS ── */}
-      <section id="quem-somos" className="py-28 bg-section-alt">
-        <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
+      <section id="quem-somos" className="py-16 sm:py-28 bg-section-alt">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
             <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
               <p className="text-gold font-semibold tracking-[0.25em] uppercase text-sm mb-4">Nossa história</p>
-              <h2 className="font-display text-6xl md:text-7xl text-foreground leading-none mb-6">
+              <h2 className="font-display text-5xl sm:text-6xl md:text-7xl text-foreground leading-none mb-6">
                 QUEM SOMOS?
               </h2>
               <p className="text-muted-foreground leading-relaxed text-base mb-6">
@@ -349,20 +349,20 @@ export default function Index() {
       </section>
 
       {/* ── SERVIÇOS ── */}
-      <section id="servicos" className="py-28 bg-background">
-        <div className="container mx-auto px-6">
+      <section id="servicos" className="py-16 sm:py-28 bg-background">
+        <div className="container mx-auto px-4 sm:px-6">
           <motion.div
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-10 sm:mb-16"
           >
             <p className="text-gold font-semibold tracking-[0.25em] uppercase text-sm mb-3">O que fazemos</p>
-            <h2 className="font-display text-6xl md:text-7xl text-foreground">NOSSOS SERVIÇOS</h2>
+            <h2 className="font-display text-5xl sm:text-6xl md:text-7xl text-foreground">NOSSOS SERVIÇOS</h2>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {services.map((s, i) => (
               <motion.div
                 key={i}
@@ -373,7 +373,7 @@ export default function Index() {
                 custom={i * 0.15}
                 className="group rounded-2xl overflow-hidden border border-border hover:border-gold/50 transition-all duration-300 hover:shadow-gold bg-card"
               >
-                <div className="relative overflow-hidden h-52">
+                <div className="relative overflow-hidden h-48 sm:h-52">
                   <img
                     src={s.image}
                     alt={s.title}
@@ -385,7 +385,7 @@ export default function Index() {
                     <s.icon size={18} className="text-primary-foreground" />
                   </div>
                 </div>
-                <div className="p-6">
+                <div className="p-5 sm:p-6">
                   <h3 className="font-display text-3xl text-foreground mb-3">{s.title}</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">{s.description}</p>
                   <a
@@ -404,20 +404,20 @@ export default function Index() {
       </section>
 
       {/* ── PRODUTOS ── */}
-      <section id="produtos" className="py-28 bg-section-alt">
-        <div className="container mx-auto px-6">
+      <section id="produtos" className="py-16 sm:py-28 bg-section-alt">
+        <div className="container mx-auto px-4 sm:px-6">
           <motion.div
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-10 sm:mb-16"
           >
             <p className="text-gold font-semibold tracking-[0.25em] uppercase text-sm mb-3">O que vendemos</p>
-            <h2 className="font-display text-6xl md:text-7xl text-foreground">NOSSOS PRODUTOS</h2>
+            <h2 className="font-display text-5xl sm:text-6xl md:text-7xl text-foreground">NOSSOS PRODUTOS</h2>
           </motion.div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
             {products.map((p, i) => (
               <motion.div
                 key={i}
@@ -426,7 +426,7 @@ export default function Index() {
                 whileInView="visible"
                 viewport={{ once: true }}
                 custom={i * 0.08}
-                className="flex items-center gap-3 p-5 rounded-xl bg-card border border-border hover:border-gold/50 hover:shadow-gold transition-all group cursor-default shadow-sm"
+                className="flex items-center gap-3 p-4 sm:p-5 rounded-xl bg-card border border-border hover:border-gold/50 hover:shadow-gold transition-all group cursor-default shadow-sm"
               >
                 <Package size={18} className="text-gold flex-shrink-0" />
                 <span className="text-sm font-medium text-foreground">{p}</span>
@@ -437,21 +437,21 @@ export default function Index() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="py-20 bg-background border-y border-border relative overflow-hidden">
+      <section className="py-16 sm:py-20 bg-background border-y border-border relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.06]" style={{ background: "var(--gradient-gold)" }} />
-        <div className="container mx-auto px-6 relative z-10 text-center">
+        <div className="container mx-auto px-4 sm:px-6 relative z-10 text-center">
           <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-            <h2 className="font-display text-5xl md:text-7xl text-foreground mb-4">
+            <h2 className="font-display text-4xl sm:text-5xl md:text-7xl text-foreground mb-4">
               PRONTO PARA COMEÇAR?
             </h2>
-            <p className="text-muted-foreground max-w-lg mx-auto mb-10 text-base">
+            <p className="text-muted-foreground max-w-lg mx-auto mb-8 sm:mb-10 text-base">
               Entre em contato pelo WhatsApp e receba um orçamento personalizado sem compromisso.
             </p>
             <a
               href="https://wa.me/5500000000000"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-3 bg-gradient-gold text-primary-foreground px-10 py-5 rounded-full font-bold text-lg hover:opacity-90 hover:scale-105 transition-all shadow-gold"
+              className="inline-flex items-center gap-3 bg-gradient-gold text-primary-foreground px-8 sm:px-10 py-4 sm:py-5 rounded-full font-bold text-base sm:text-lg hover:opacity-90 hover:scale-105 transition-all shadow-gold"
             >
               <Phone size={22} />
               Falar no WhatsApp
@@ -462,21 +462,21 @@ export default function Index() {
 
       {/* ── LOCALIZAÇÃO ── */}
       <section id="localizacao" className="py-28 bg-section-alt">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 sm:px-6">
           <motion.div
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-10 sm:mb-16"
           >
             <p className="text-gold font-semibold tracking-[0.25em] uppercase text-sm mb-3">Venha nos visitar</p>
-            <h2 className="font-display text-6xl md:text-7xl text-foreground">ONDE ESTAMOS</h2>
+            <h2 className="font-display text-5xl sm:text-6xl md:text-7xl text-foreground">ONDE ESTAMOS</h2>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-12 items-center max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 sm:gap-12 items-start max-w-4xl mx-auto">
             <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-              <div className="flex flex-col gap-5">
+              <div className="flex flex-col gap-4">
                 {[
                   {
                     icon: MapPin,
@@ -500,13 +500,13 @@ export default function Index() {
                     ),
                   },
                 ].map((item, i) => (
-                  <div key={i} className="flex items-start gap-4 p-6 rounded-xl bg-card border border-border shadow-sm hover:border-gold/40 transition-colors">
-                    <div className="w-11 h-11 rounded-lg bg-gradient-gold flex items-center justify-center flex-shrink-0 shadow-gold">
-                      <item.icon size={20} className="text-primary-foreground" />
+                  <div key={i} className="flex items-start gap-4 p-4 sm:p-6 rounded-xl bg-card border border-border shadow-sm hover:border-gold/40 transition-colors">
+                    <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-lg bg-gradient-gold flex items-center justify-center flex-shrink-0 shadow-gold">
+                      <item.icon size={18} className="text-primary-foreground" />
                     </div>
-                    <div>
-                      <p className="font-semibold text-foreground mb-1">{item.title}</p>
-                      <p className="text-muted-foreground text-sm">{item.content}</p>
+                    <div className="min-w-0">
+                      <p className="font-semibold text-foreground mb-1 text-sm sm:text-base">{item.title}</p>
+                      <p className="text-muted-foreground text-sm break-words">{item.content}</p>
                     </div>
                   </div>
                 ))}
@@ -519,7 +519,7 @@ export default function Index() {
               whileInView="visible"
               viewport={{ once: true }}
               custom={0.2}
-              className="rounded-2xl overflow-hidden border border-border h-80 bg-card shadow-sm"
+              className="rounded-2xl overflow-hidden border border-border h-64 sm:h-80 bg-card shadow-sm"
             >
               <iframe
                 title="Localização Infocenter"
@@ -537,10 +537,10 @@ export default function Index() {
       </section>
 
       {/* ── FOOTER ── */}
-      <footer className="bg-card border-t border-border py-10">
-        <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+      <footer className="bg-card border-t border-border py-8 sm:py-10">
+        <div className="container mx-auto px-4 sm:px-6 flex flex-col items-center gap-4 text-center md:flex-row md:justify-between md:text-left">
           <p className="font-display text-2xl tracking-widest text-gradient-gold">INFOCENTER</p>
-          <p className="text-muted-foreground text-sm">
+          <p className="text-muted-foreground text-xs sm:text-sm">
             © {new Date().getFullYear()} Gráfica Infocenter. Todos os direitos reservados.
           </p>
           <div className="flex items-center gap-4">
