@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Instagram, Phone, MapPin, ChevronDown, PrinterIcon, ImageIcon, CreditCard, Package, Star, Clock, Shield } from "lucide-react";
+import { Menu, X, Instagram, Phone, MapPin, ChevronDown, PrinterIcon, ImageIcon, CreditCard, Package, Star, Clock, Shield, Sun, Moon } from "lucide-react";
 import heroPrinter from "@/assets/hero-printer.jpg";
 import serviceImpressao from "@/assets/service-impressao.jpg";
 import serviceBanner from "@/assets/service-banner.jpg";
@@ -66,12 +66,22 @@ const fadeUp = {
 export default function Index() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [dark, setDark] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  useEffect(() => {
+    const root = document.documentElement;
+    if (dark) {
+      root.classList.add("dark");
+    } else {
+      root.classList.remove("dark");
+    }
+  }, [dark]);
 
   return (
     <div className="min-h-screen bg-background text-foreground font-body overflow-x-hidden">
@@ -99,7 +109,16 @@ export default function Index() {
             ))}
           </nav>
 
-          <div className="hidden md:flex items-center gap-4">
+          <div className="hidden md:flex items-center gap-3">
+            {/* Theme toggle */}
+            <button
+              onClick={() => setDark(!dark)}
+              aria-label="Alternar tema"
+              className="w-9 h-9 flex items-center justify-center rounded-full border border-border text-muted-foreground hover:text-gold hover:border-gold transition-colors duration-200"
+            >
+              {dark ? <Sun size={16} /> : <Moon size={16} />}
+            </button>
+
             <a
               href="https://www.instagram.com"
               target="_blank"
@@ -119,14 +138,23 @@ export default function Index() {
             </a>
           </div>
 
-          {/* Mobile menu button */}
-          <button
-            className="md:hidden text-foreground"
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Menu"
-          >
-            {menuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          {/* Mobile buttons */}
+          <div className="md:hidden flex items-center gap-2">
+            <button
+              onClick={() => setDark(!dark)}
+              aria-label="Alternar tema"
+              className="w-9 h-9 flex items-center justify-center rounded-full border border-border text-muted-foreground"
+            >
+              {dark ? <Sun size={16} /> : <Moon size={16} />}
+            </button>
+            <button
+              className="text-foreground"
+              onClick={() => setMenuOpen(!menuOpen)}
+              aria-label="Menu"
+            >
+              {menuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Menu */}
@@ -220,7 +248,7 @@ export default function Index() {
               href="https://wa.me/5500000000000"
               target="_blank"
               rel="noreferrer"
-              className="border border-gold text-gold px-8 py-4 rounded-full font-bold text-lg hover:bg-gold hover:text-primary-foreground transition-all duration-200"
+              className="border border-gold text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-gradient-gold hover:border-transparent transition-all duration-200"
             >
               Pedir Orçamento
             </a>
@@ -263,63 +291,65 @@ export default function Index() {
       </section>
 
       {/* ── QUEM SOMOS ── */}
-      <section id="quem-somos" className="py-28 container mx-auto px-6">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
-          <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-            <p className="text-gold font-semibold tracking-[0.25em] uppercase text-sm mb-4">Nossa história</p>
-            <h2 className="font-display text-6xl md:text-7xl text-foreground leading-none mb-6">
-              QUEM SOMOS?
-            </h2>
-            <p className="text-muted-foreground leading-relaxed text-base mb-6">
-              A Gráfica Infocenter foi fundada em meados de 2002 pelo marido da atual proprietária, inicialmente com foco em recarga de cartuchos e manutenção de impressoras. A primeira sede ficava em frente ao aeroporto, onde permaneceu por cerca de 10 anos.
-            </p>
-            <p className="text-muted-foreground leading-relaxed text-base">
-              Com o tempo, perceberam que a modernização do mercado exigia mudanças, o que os motivou a investir em equipamentos voltados para o setor gráfico — e hoje somos referência em impressão digital na região.
-            </p>
-          </motion.div>
+      <section id="quem-somos" className="py-28 bg-section-alt">
+        <div className="container mx-auto px-6">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+              <p className="text-gold font-semibold tracking-[0.25em] uppercase text-sm mb-4">Nossa história</p>
+              <h2 className="font-display text-6xl md:text-7xl text-foreground leading-none mb-6">
+                QUEM SOMOS?
+              </h2>
+              <p className="text-muted-foreground leading-relaxed text-base mb-6">
+                A Gráfica Infocenter foi fundada em meados de 2002 pelo marido da atual proprietária, inicialmente com foco em recarga de cartuchos e manutenção de impressoras. A primeira sede ficava em frente ao aeroporto, onde permaneceu por cerca de 10 anos.
+              </p>
+              <p className="text-muted-foreground leading-relaxed text-base">
+                Com o tempo, perceberam que a modernização do mercado exigia mudanças, o que os motivou a investir em equipamentos voltados para o setor gráfico — e hoje somos referência em impressão digital na região.
+              </p>
+            </motion.div>
 
-          <div className="grid grid-cols-1 gap-6">
-            {[
-              {
-                icon: Star,
-                title: "Nossa Missão",
-                text: "Oferecer serviços com qualidade é atender às expectativas dos clientes com eficiência e atenção. Cada etapa deve refletir compromisso e profissionalismo.",
-              },
-              {
-                icon: Shield,
-                title: "Nossos Valores",
-                text: "Ser transparente na prestação de serviços é agir com respeito e honestidade, construindo relações de confiança com clientes e parceiros.",
-              },
-              {
-                icon: Clock,
-                title: "Nosso Compromisso",
-                text: "Entregamos dentro do prazo, com excelência técnica e cuidado com cada detalhe. A sua satisfação é o nosso principal resultado.",
-              },
-            ].map((item, i) => (
-              <motion.div
-                key={i}
-                variants={fadeUp}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                custom={i * 0.15}
-                className="flex gap-5 p-6 rounded-xl bg-card border border-border hover:border-gold/40 transition-colors group"
-              >
-                <div className="w-11 h-11 rounded-lg bg-gradient-gold flex items-center justify-center flex-shrink-0 shadow-gold">
-                  <item.icon size={20} className="text-primary-foreground" />
-                </div>
-                <div>
-                  <h3 className="font-display text-2xl text-foreground mb-1">{item.title}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{item.text}</p>
-                </div>
-              </motion.div>
-            ))}
+            <div className="grid grid-cols-1 gap-5">
+              {[
+                {
+                  icon: Star,
+                  title: "Nossa Missão",
+                  text: "Oferecer serviços com qualidade é atender às expectativas dos clientes com eficiência e atenção. Cada etapa deve refletir compromisso e profissionalismo.",
+                },
+                {
+                  icon: Shield,
+                  title: "Nossos Valores",
+                  text: "Ser transparente na prestação de serviços é agir com respeito e honestidade, construindo relações de confiança com clientes e parceiros.",
+                },
+                {
+                  icon: Clock,
+                  title: "Nosso Compromisso",
+                  text: "Entregamos dentro do prazo, com excelência técnica e cuidado com cada detalhe. A sua satisfação é o nosso principal resultado.",
+                },
+              ].map((item, i) => (
+                <motion.div
+                  key={i}
+                  variants={fadeUp}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  custom={i * 0.15}
+                  className="flex gap-5 p-6 rounded-xl bg-card border border-border hover:border-gold/50 transition-colors group shadow-sm"
+                >
+                  <div className="w-11 h-11 rounded-lg bg-gradient-gold flex items-center justify-center flex-shrink-0 shadow-gold">
+                    <item.icon size={20} className="text-primary-foreground" />
+                  </div>
+                  <div>
+                    <h3 className="font-display text-2xl text-foreground mb-1">{item.title}</h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed">{item.text}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* ── SERVIÇOS ── */}
-      <section id="servicos" className="py-28 bg-card">
+      <section id="servicos" className="py-28 bg-background">
         <div className="container mx-auto px-6">
           <motion.div
             variants={fadeUp}
@@ -341,7 +371,7 @@ export default function Index() {
                 whileInView="visible"
                 viewport={{ once: true }}
                 custom={i * 0.15}
-                className="group rounded-2xl overflow-hidden border border-border hover:border-gold/50 transition-all duration-300 hover:shadow-gold bg-background"
+                className="group rounded-2xl overflow-hidden border border-border hover:border-gold/50 transition-all duration-300 hover:shadow-gold bg-card"
               >
                 <div className="relative overflow-hidden h-52">
                   <img
@@ -350,7 +380,7 @@ export default function Index() {
                     loading="lazy"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-card via-card/20 to-transparent" />
                   <div className="absolute bottom-4 left-4 w-10 h-10 rounded-lg bg-gradient-gold flex items-center justify-center shadow-gold">
                     <s.icon size={18} className="text-primary-foreground" />
                   </div>
@@ -374,39 +404,41 @@ export default function Index() {
       </section>
 
       {/* ── PRODUTOS ── */}
-      <section id="produtos" className="py-28 container mx-auto px-6">
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <p className="text-gold font-semibold tracking-[0.25em] uppercase text-sm mb-3">O que vendemos</p>
-          <h2 className="font-display text-6xl md:text-7xl text-foreground">NOSSOS PRODUTOS</h2>
-        </motion.div>
+      <section id="produtos" className="py-28 bg-section-alt">
+        <div className="container mx-auto px-6">
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <p className="text-gold font-semibold tracking-[0.25em] uppercase text-sm mb-3">O que vendemos</p>
+            <h2 className="font-display text-6xl md:text-7xl text-foreground">NOSSOS PRODUTOS</h2>
+          </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {products.map((p, i) => (
-            <motion.div
-              key={i}
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              custom={i * 0.08}
-              className="flex items-center gap-3 p-5 rounded-xl bg-card border border-border hover:border-gold/40 hover:bg-secondary transition-all group cursor-default"
-            >
-              <Package size={18} className="text-gold flex-shrink-0" />
-              <span className="text-sm font-medium text-foreground">{p}</span>
-            </motion.div>
-          ))}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {products.map((p, i) => (
+              <motion.div
+                key={i}
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                custom={i * 0.08}
+                className="flex items-center gap-3 p-5 rounded-xl bg-card border border-border hover:border-gold/50 hover:shadow-gold transition-all group cursor-default shadow-sm"
+              >
+                <Package size={18} className="text-gold flex-shrink-0" />
+                <span className="text-sm font-medium text-foreground">{p}</span>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* ── CTA ── */}
-      <section className="py-20 bg-card border-y border-border relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10" style={{ background: "var(--gradient-gold)" }} />
+      <section className="py-20 bg-background border-y border-border relative overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.06]" style={{ background: "var(--gradient-gold)" }} />
         <div className="container mx-auto px-6 relative z-10 text-center">
           <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
             <h2 className="font-display text-5xl md:text-7xl text-foreground mb-4">
@@ -429,81 +461,78 @@ export default function Index() {
       </section>
 
       {/* ── LOCALIZAÇÃO ── */}
-      <section id="localizacao" className="py-28 container mx-auto px-6">
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <p className="text-gold font-semibold tracking-[0.25em] uppercase text-sm mb-3">Venha nos visitar</p>
-          <h2 className="font-display text-6xl md:text-7xl text-foreground">ONDE ESTAMOS</h2>
-        </motion.div>
-
-        <div className="grid md:grid-cols-2 gap-12 items-center max-w-4xl mx-auto">
-          <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-            <div className="flex flex-col gap-6">
-              <div className="flex items-start gap-4 p-6 rounded-xl bg-card border border-border">
-                <div className="w-11 h-11 rounded-lg bg-gradient-gold flex items-center justify-center flex-shrink-0 shadow-gold">
-                  <MapPin size={20} className="text-primary-foreground" />
-                </div>
-                <div>
-                  <p className="font-semibold text-foreground mb-1">Endereço</p>
-                  <p className="text-muted-foreground text-sm">
-                    Rua Principal, 123 — Centro<br />
-                    Cidade, Estado — CEP 00000-000
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4 p-6 rounded-xl bg-card border border-border">
-                <div className="w-11 h-11 rounded-lg bg-gradient-gold flex items-center justify-center flex-shrink-0 shadow-gold">
-                  <Clock size={20} className="text-primary-foreground" />
-                </div>
-                <div>
-                  <p className="font-semibold text-foreground mb-1">Horário de Atendimento</p>
-                  <p className="text-muted-foreground text-sm">
-                    Segunda a Sexta: 8h às 18h<br />
-                    Sábado: 8h às 12h
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4 p-6 rounded-xl bg-card border border-border">
-                <div className="w-11 h-11 rounded-lg bg-gradient-gold flex items-center justify-center flex-shrink-0 shadow-gold">
-                  <Phone size={20} className="text-primary-foreground" />
-                </div>
-                <div>
-                  <p className="font-semibold text-foreground mb-1">Contato</p>
-                  <p className="text-muted-foreground text-sm">
-                    WhatsApp: (00) 9 0000-0000<br />
-                    Email: contato@infocenter.com.br
-                  </p>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-
+      <section id="localizacao" className="py-28 bg-section-alt">
+        <div className="container mx-auto px-6">
           <motion.div
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            custom={0.2}
-            className="rounded-2xl overflow-hidden border border-border h-80 bg-card flex items-center justify-center"
+            className="text-center mb-16"
           >
-            <iframe
-              title="Localização Infocenter"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.1042296455996!2d-46.6557048!3d-23.5615559!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDMzJzQxLjYiUyA0NsKwMzknMjAuNiJX!5e0!3m2!1spt-BR!2sbr!4v1234567890"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
+            <p className="text-gold font-semibold tracking-[0.25em] uppercase text-sm mb-3">Venha nos visitar</p>
+            <h2 className="font-display text-6xl md:text-7xl text-foreground">ONDE ESTAMOS</h2>
           </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-12 items-center max-w-4xl mx-auto">
+            <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+              <div className="flex flex-col gap-5">
+                {[
+                  {
+                    icon: MapPin,
+                    title: "Endereço",
+                    content: (
+                      <>Rua Principal, 123 — Centro<br />Cidade, Estado — CEP 00000-000</>
+                    ),
+                  },
+                  {
+                    icon: Clock,
+                    title: "Horário de Atendimento",
+                    content: (
+                      <>Segunda a Sexta: 8h às 18h<br />Sábado: 8h às 12h</>
+                    ),
+                  },
+                  {
+                    icon: Phone,
+                    title: "Contato",
+                    content: (
+                      <>WhatsApp: (00) 9 0000-0000<br />Email: contato@infocenter.com.br</>
+                    ),
+                  },
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-4 p-6 rounded-xl bg-card border border-border shadow-sm hover:border-gold/40 transition-colors">
+                    <div className="w-11 h-11 rounded-lg bg-gradient-gold flex items-center justify-center flex-shrink-0 shadow-gold">
+                      <item.icon size={20} className="text-primary-foreground" />
+                    </div>
+                    <div>
+                      <p className="font-semibold text-foreground mb-1">{item.title}</p>
+                      <p className="text-muted-foreground text-sm">{item.content}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
+            <motion.div
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              custom={0.2}
+              className="rounded-2xl overflow-hidden border border-border h-80 bg-card shadow-sm"
+            >
+              <iframe
+                title="Localização Infocenter"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.1042296455996!2d-46.6557048!3d-23.5615559!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDMzJzQxLjYiUyA0NsKwMzknMjAuNiJX!5e0!3m2!1spt-BR!2sbr!4v1234567890"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </motion.div>
+          </div>
         </div>
       </section>
 

@@ -4,18 +4,17 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700;800&display=swap');
 
-/* Design system — all colors in HSL */
-
+/* ── LIGHT THEME ── */
 @layer base {
   :root {
     --background: 40 30% 97%;
-    --foreground: 20 15% 15%;
+    --foreground: 20 15% 12%;
 
     --card: 0 0% 100%;
-    --card-foreground: 20 15% 15%;
+    --card-foreground: 20 15% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 20 15% 15%;
+    --popover-foreground: 20 15% 12%;
 
     --primary: 35 90% 48%;
     --primary-foreground: 0 0% 100%;
@@ -23,8 +22,8 @@
     --secondary: 40 20% 92%;
     --secondary-foreground: 20 15% 20%;
 
-    --muted: 40 20% 92%;
-    --muted-foreground: 20 10% 45%;
+    --muted: 40 20% 90%;
+    --muted-foreground: 20 12% 38%;
 
     --accent: 35 90% 48%;
     --accent-foreground: 0 0% 100%;
@@ -32,8 +31,8 @@
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 40 15% 85%;
-    --input: 40 15% 85%;
+    --border: 40 18% 84%;
+    --input: 40 18% 84%;
     --ring: 35 90% 48%;
 
     --radius: 0.5rem;
@@ -41,8 +40,8 @@
     /* Custom tokens */
     --gold: 35 90% 48%;
     --gold-light: 42 100% 62%;
-    --dark-surface: 40 20% 92%;
-    --dark-surface-2: 40 15% 88%;
+    --section-alt: 40 25% 94%;
+
     --gradient-hero: linear-gradient(to bottom, hsl(20 10% 8% / 0.5) 0%, hsl(20 10% 8% / 0.55) 50%, hsl(40 30% 97% / 1) 100%);
     --gradient-gold: linear-gradient(135deg, hsl(35 90% 48%), hsl(42 100% 62%));
     --shadow-gold: 0 0 40px hsl(35 90% 48% / 0.25);
@@ -55,6 +54,55 @@
     --sidebar-accent-foreground: 20 15% 20%;
     --sidebar-border: 40 15% 82%;
     --sidebar-ring: 35 90% 48%;
+  }
+
+  /* ── DARK THEME ── */
+  .dark {
+    --background: 220 15% 10%;
+    --foreground: 40 25% 92%;
+
+    --card: 220 14% 14%;
+    --card-foreground: 40 25% 92%;
+
+    --popover: 220 14% 14%;
+    --popover-foreground: 40 25% 92%;
+
+    --primary: 35 90% 52%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 12% 20%;
+    --secondary-foreground: 40 20% 80%;
+
+    --muted: 220 12% 18%;
+    --muted-foreground: 40 15% 60%;
+
+    --accent: 35 90% 52%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 12% 22%;
+    --input: 220 12% 22%;
+    --ring: 35 90% 52%;
+
+    /* Custom tokens dark */
+    --gold: 35 90% 55%;
+    --gold-light: 42 100% 65%;
+    --section-alt: 220 14% 13%;
+
+    --gradient-hero: linear-gradient(to bottom, hsl(220 15% 8% / 0.6) 0%, hsl(220 15% 8% / 0.65) 50%, hsl(220 15% 10% / 1) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(35 90% 52%), hsl(42 100% 65%));
+    --shadow-gold: 0 0 40px hsl(35 90% 52% / 0.3);
+
+    --sidebar-background: 220 14% 13%;
+    --sidebar-foreground: 40 25% 85%;
+    --sidebar-primary: 35 90% 52%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 12% 18%;
+    --sidebar-accent-foreground: 40 20% 80%;
+    --sidebar-border: 220 12% 20%;
+    --sidebar-ring: 35 90% 52%;
   }
 }
 
@@ -70,6 +118,7 @@
   body {
     @apply bg-background text-foreground;
     font-family: 'Montserrat', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   h1, h2, h3 {
@@ -96,5 +145,9 @@
 
   .border-gold {
     border-color: hsl(var(--gold));
+  }
+
+  .bg-section-alt {
+    background-color: hsl(var(--section-alt));
   }
 }
