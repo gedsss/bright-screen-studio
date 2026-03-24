@@ -189,7 +189,7 @@ export default function Index() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="font-display text-7xl md:text-[10rem] leading-none mb-6 text-foreground"
+            className="font-display text-7xl md:text-[10rem] leading-none mb-6 text-white"
           >
             PROCURA POR UMA{" "}
             <span className="text-gradient-gold">GRÁFICA?</span>
