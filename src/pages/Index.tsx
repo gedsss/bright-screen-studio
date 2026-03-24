@@ -291,12 +291,12 @@ export default function Index() {
       </section>
 
       {/* ── QUEM SOMOS ── */}
-      <section id="quem-somos" className="py-28 bg-section-alt">
-        <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
+      <section id="quem-somos" className="py-16 sm:py-28 bg-section-alt">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
             <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
               <p className="text-gold font-semibold tracking-[0.25em] uppercase text-sm mb-4">Nossa história</p>
-              <h2 className="font-display text-6xl md:text-7xl text-foreground leading-none mb-6">
+              <h2 className="font-display text-5xl sm:text-6xl md:text-7xl text-foreground leading-none mb-6">
                 QUEM SOMOS?
               </h2>
               <p className="text-muted-foreground leading-relaxed text-base mb-6">
