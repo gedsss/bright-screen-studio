@@ -193,7 +193,7 @@ export default function Index() {
       </header>
 
       {/* ── HERO ── */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <img
           src={heroPrinter}
           alt="Impressora de grande formato"
@@ -203,12 +203,12 @@ export default function Index() {
         />
         <div className="absolute inset-0" style={{ background: "var(--gradient-hero)" }} />
 
-        <div className="relative z-10 text-center px-6">
+        <div className="relative z-10 text-center px-4 sm:px-6 max-w-5xl mx-auto pt-24 pb-20">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-gold-light font-semibold tracking-[0.3em] uppercase text-sm mb-4"
+            className="text-gold-light font-semibold tracking-[0.2em] sm:tracking-[0.3em] uppercase text-xs sm:text-sm mb-4"
           >
             Gráfica Profissional desde 2002
           </motion.p>
@@ -217,7 +217,7 @@ export default function Index() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="font-display text-7xl md:text-[10rem] leading-none mb-6 text-white"
+            className="font-display text-5xl sm:text-7xl md:text-[9rem] leading-none mb-6 text-white"
           >
             PROCURA POR UMA{" "}
             <span className="text-gradient-gold">GRÁFICA?</span>
@@ -227,7 +227,7 @@ export default function Index() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.7 }}
-            className="text-white/80 text-lg md:text-xl max-w-xl mx-auto mb-10"
+            className="text-white/80 text-base sm:text-lg md:text-xl max-w-xl mx-auto mb-8 sm:mb-10"
           >
             Impressão de alta qualidade, banners, cartões e muito mais — tudo com acabamento profissional.
           </motion.p>
@@ -236,11 +236,11 @@ export default function Index() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.9 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center"
           >
             <a
               href="#servicos"
-              className="bg-gradient-gold text-primary-foreground px-8 py-4 rounded-full font-bold text-lg hover:opacity-90 transition-all shadow-gold hover:scale-105 duration-200"
+              className="bg-gradient-gold text-primary-foreground px-7 py-3.5 sm:px-8 sm:py-4 rounded-full font-bold text-base sm:text-lg hover:opacity-90 transition-all shadow-gold hover:scale-105 duration-200"
             >
               Ver Serviços
             </a>
@@ -248,7 +248,7 @@ export default function Index() {
               href="https://wa.me/5500000000000"
               target="_blank"
               rel="noreferrer"
-              className="border border-gold text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-gradient-gold hover:border-transparent transition-all duration-200"
+              className="border border-gold text-white px-7 py-3.5 sm:px-8 sm:py-4 rounded-full font-bold text-base sm:text-lg hover:bg-gradient-gold hover:border-transparent transition-all duration-200"
             >
               Pedir Orçamento
             </a>
