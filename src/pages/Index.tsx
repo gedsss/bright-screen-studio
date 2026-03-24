@@ -404,20 +404,20 @@ export default function Index() {
       </section>
 
       {/* ── PRODUTOS ── */}
-      <section id="produtos" className="py-28 bg-section-alt">
-        <div className="container mx-auto px-6">
+      <section id="produtos" className="py-16 sm:py-28 bg-section-alt">
+        <div className="container mx-auto px-4 sm:px-6">
           <motion.div
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-10 sm:mb-16"
           >
             <p className="text-gold font-semibold tracking-[0.25em] uppercase text-sm mb-3">O que vendemos</p>
-            <h2 className="font-display text-6xl md:text-7xl text-foreground">NOSSOS PRODUTOS</h2>
+            <h2 className="font-display text-5xl sm:text-6xl md:text-7xl text-foreground">NOSSOS PRODUTOS</h2>
           </motion.div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
             {products.map((p, i) => (
               <motion.div
                 key={i}
@@ -426,7 +426,7 @@ export default function Index() {
                 whileInView="visible"
                 viewport={{ once: true }}
                 custom={i * 0.08}
-                className="flex items-center gap-3 p-5 rounded-xl bg-card border border-border hover:border-gold/50 hover:shadow-gold transition-all group cursor-default shadow-sm"
+                className="flex items-center gap-3 p-4 sm:p-5 rounded-xl bg-card border border-border hover:border-gold/50 hover:shadow-gold transition-all group cursor-default shadow-sm"
               >
                 <Package size={18} className="text-gold flex-shrink-0" />
                 <span className="text-sm font-medium text-foreground">{p}</span>
@@ -437,21 +437,21 @@ export default function Index() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="py-20 bg-background border-y border-border relative overflow-hidden">
+      <section className="py-16 sm:py-20 bg-background border-y border-border relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.06]" style={{ background: "var(--gradient-gold)" }} />
-        <div className="container mx-auto px-6 relative z-10 text-center">
+        <div className="container mx-auto px-4 sm:px-6 relative z-10 text-center">
           <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-            <h2 className="font-display text-5xl md:text-7xl text-foreground mb-4">
+            <h2 className="font-display text-4xl sm:text-5xl md:text-7xl text-foreground mb-4">
               PRONTO PARA COMEÇAR?
             </h2>
-            <p className="text-muted-foreground max-w-lg mx-auto mb-10 text-base">
+            <p className="text-muted-foreground max-w-lg mx-auto mb-8 sm:mb-10 text-base">
               Entre em contato pelo WhatsApp e receba um orçamento personalizado sem compromisso.
             </p>
             <a
               href="https://wa.me/5500000000000"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-3 bg-gradient-gold text-primary-foreground px-10 py-5 rounded-full font-bold text-lg hover:opacity-90 hover:scale-105 transition-all shadow-gold"
+              className="inline-flex items-center gap-3 bg-gradient-gold text-primary-foreground px-8 sm:px-10 py-4 sm:py-5 rounded-full font-bold text-base sm:text-lg hover:opacity-90 hover:scale-105 transition-all shadow-gold"
             >
               <Phone size={22} />
               Falar no WhatsApp
