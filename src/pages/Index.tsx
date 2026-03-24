@@ -180,7 +180,7 @@ export default function Index() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-gold font-semibold tracking-[0.3em] uppercase text-sm mb-4"
+            className="text-gold-light font-semibold tracking-[0.3em] uppercase text-sm mb-4"
           >
             Gráfica Profissional desde 2002
           </motion.p>
@@ -189,7 +189,7 @@ export default function Index() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="font-display text-7xl md:text-[10rem] leading-none mb-6 text-foreground"
+            className="font-display text-7xl md:text-[10rem] leading-none mb-6 text-white"
           >
             PROCURA POR UMA{" "}
             <span className="text-gradient-gold">GRÁFICA?</span>
@@ -199,7 +199,7 @@ export default function Index() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.7 }}
-            className="text-muted-foreground text-lg md:text-xl max-w-xl mx-auto mb-10"
+            className="text-white/80 text-lg md:text-xl max-w-xl mx-auto mb-10"
           >
             Impressão de alta qualidade, banners, cartões e muito mais — tudo com acabamento profissional.
           </motion.p>
@@ -232,7 +232,7 @@ export default function Index() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5, duration: 0.8 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 text-muted-foreground flex flex-col items-center gap-2 text-sm"
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/60 flex flex-col items-center gap-2 text-sm"
         >
           <span className="tracking-widest uppercase text-xs">Conheça-nos</span>
           <motion.div animate={{ y: [0, 8, 0] }} transition={{ repeat: Infinity, duration: 1.5 }}>
