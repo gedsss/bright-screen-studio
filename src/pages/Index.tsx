@@ -180,7 +180,7 @@ export default function Index() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-gold font-semibold tracking-[0.3em] uppercase text-sm mb-4"
+            className="text-gold-light font-semibold tracking-[0.3em] uppercase text-sm mb-4"
           >
             Gráfica Profissional desde 2002
           </motion.p>
