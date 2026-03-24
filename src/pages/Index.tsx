@@ -462,21 +462,21 @@ export default function Index() {
 
       {/* ── LOCALIZAÇÃO ── */}
       <section id="localizacao" className="py-28 bg-section-alt">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 sm:px-6">
           <motion.div
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-10 sm:mb-16"
           >
             <p className="text-gold font-semibold tracking-[0.25em] uppercase text-sm mb-3">Venha nos visitar</p>
-            <h2 className="font-display text-6xl md:text-7xl text-foreground">ONDE ESTAMOS</h2>
+            <h2 className="font-display text-5xl sm:text-6xl md:text-7xl text-foreground">ONDE ESTAMOS</h2>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-12 items-center max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 sm:gap-12 items-start max-w-4xl mx-auto">
             <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-              <div className="flex flex-col gap-5">
+              <div className="flex flex-col gap-4">
                 {[
                   {
                     icon: MapPin,
@@ -500,13 +500,13 @@ export default function Index() {
                     ),
                   },
                 ].map((item, i) => (
-                  <div key={i} className="flex items-start gap-4 p-6 rounded-xl bg-card border border-border shadow-sm hover:border-gold/40 transition-colors">
-                    <div className="w-11 h-11 rounded-lg bg-gradient-gold flex items-center justify-center flex-shrink-0 shadow-gold">
-                      <item.icon size={20} className="text-primary-foreground" />
+                  <div key={i} className="flex items-start gap-4 p-4 sm:p-6 rounded-xl bg-card border border-border shadow-sm hover:border-gold/40 transition-colors">
+                    <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-lg bg-gradient-gold flex items-center justify-center flex-shrink-0 shadow-gold">
+                      <item.icon size={18} className="text-primary-foreground" />
                     </div>
-                    <div>
-                      <p className="font-semibold text-foreground mb-1">{item.title}</p>
-                      <p className="text-muted-foreground text-sm">{item.content}</p>
+                    <div className="min-w-0">
+                      <p className="font-semibold text-foreground mb-1 text-sm sm:text-base">{item.title}</p>
+                      <p className="text-muted-foreground text-sm break-words">{item.content}</p>
                     </div>
                   </div>
                 ))}
@@ -519,7 +519,7 @@ export default function Index() {
               whileInView="visible"
               viewport={{ once: true }}
               custom={0.2}
-              className="rounded-2xl overflow-hidden border border-border h-80 bg-card shadow-sm"
+              className="rounded-2xl overflow-hidden border border-border h-64 sm:h-80 bg-card shadow-sm"
             >
               <iframe
                 title="Localização Infocenter"
@@ -537,10 +537,10 @@ export default function Index() {
       </section>
 
       {/* ── FOOTER ── */}
-      <footer className="bg-card border-t border-border py-10">
-        <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+      <footer className="bg-card border-t border-border py-8 sm:py-10">
+        <div className="container mx-auto px-4 sm:px-6 flex flex-col items-center gap-4 text-center md:flex-row md:justify-between md:text-left">
           <p className="font-display text-2xl tracking-widest text-gradient-gold">INFOCENTER</p>
-          <p className="text-muted-foreground text-sm">
+          <p className="text-muted-foreground text-xs sm:text-sm">
             © {new Date().getFullYear()} Gráfica Infocenter. Todos os direitos reservados.
           </p>
           <div className="flex items-center gap-4">
