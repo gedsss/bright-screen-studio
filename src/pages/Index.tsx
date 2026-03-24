@@ -148,7 +148,7 @@ export default function Index() {
               {dark ? <Sun size={16} /> : <Moon size={16} />}
             </button>
             <button
-              className="text-foreground"
+              className={dark ? "text-foreground" : "text-gold"}
               onClick={() => setMenuOpen(!menuOpen)}
               aria-label="Menu"
             >
@@ -260,9 +260,9 @@ export default function Index() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5, duration: 0.8 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/60 flex flex-col items-center gap-2 text-sm"
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-sm"
         >
-          <span className="tracking-widest uppercase text-xs">Conheça-nos</span>
+          <span className="tracking-widest uppercase text-xs text-gold">Conheça-nos</span>
           <motion.div animate={{ y: [0, 8, 0] }} transition={{ repeat: Infinity, duration: 1.5 }}>
             <ChevronDown size={20} className="text-gold" />
           </motion.div>
