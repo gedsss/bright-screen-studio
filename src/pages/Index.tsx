@@ -282,8 +282,8 @@ export default function Index() {
                 viewport={{ once: true }}
                 custom={i}
               >
-                <p className="font-display text-5xl text-gradient-gold">{s.value}</p>
-                <p className="text-muted-foreground text-sm mt-2 font-medium uppercase tracking-wider">{s.label}</p>
+                <p className="font-display text-3xl sm:text-5xl text-gradient-gold">{s.value}</p>
+                <p className="text-muted-foreground text-xs sm:text-sm mt-2 font-medium uppercase tracking-wider">{s.label}</p>
               </motion.div>
             ))}
           </div>
