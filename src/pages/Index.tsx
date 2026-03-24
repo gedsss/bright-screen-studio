@@ -148,7 +148,7 @@ export default function Index() {
               {dark ? <Sun size={16} /> : <Moon size={16} />}
             </button>
             <button
-              className="text-foreground"
+              className={dark ? "text-foreground" : "text-gold"}
               onClick={() => setMenuOpen(!menuOpen)}
               aria-label="Menu"
             >
