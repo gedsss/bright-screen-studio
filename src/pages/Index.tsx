@@ -349,20 +349,20 @@ export default function Index() {
       </section>
 
       {/* ── SERVIÇOS ── */}
-      <section id="servicos" className="py-28 bg-background">
-        <div className="container mx-auto px-6">
+      <section id="servicos" className="py-16 sm:py-28 bg-background">
+        <div className="container mx-auto px-4 sm:px-6">
           <motion.div
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-10 sm:mb-16"
           >
             <p className="text-gold font-semibold tracking-[0.25em] uppercase text-sm mb-3">O que fazemos</p>
-            <h2 className="font-display text-6xl md:text-7xl text-foreground">NOSSOS SERVIÇOS</h2>
+            <h2 className="font-display text-5xl sm:text-6xl md:text-7xl text-foreground">NOSSOS SERVIÇOS</h2>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {services.map((s, i) => (
               <motion.div
                 key={i}
@@ -373,7 +373,7 @@ export default function Index() {
                 custom={i * 0.15}
                 className="group rounded-2xl overflow-hidden border border-border hover:border-gold/50 transition-all duration-300 hover:shadow-gold bg-card"
               >
-                <div className="relative overflow-hidden h-52">
+                <div className="relative overflow-hidden h-48 sm:h-52">
                   <img
                     src={s.image}
                     alt={s.title}
@@ -385,7 +385,7 @@ export default function Index() {
                     <s.icon size={18} className="text-primary-foreground" />
                   </div>
                 </div>
-                <div className="p-6">
+                <div className="p-5 sm:p-6">
                   <h3 className="font-display text-3xl text-foreground mb-3">{s.title}</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">{s.description}</p>
                   <a
