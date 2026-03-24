@@ -270,9 +270,9 @@ export default function Index() {
       </section>
 
       {/* ── STATS ── */}
-      <section className="py-14 border-y border-border bg-card">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+      <section className="py-10 sm:py-14 border-y border-border bg-card">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-3 gap-4 sm:gap-8 text-center">
             {stats.map((s, i) => (
               <motion.div
                 key={i}
