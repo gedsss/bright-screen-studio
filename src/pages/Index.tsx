@@ -199,7 +199,7 @@ export default function Index() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.7 }}
-            className="text-muted-foreground text-lg md:text-xl max-w-xl mx-auto mb-10"
+            className="text-white/80 text-lg md:text-xl max-w-xl mx-auto mb-10"
           >
             Impressão de alta qualidade, banners, cartões e muito mais — tudo com acabamento profissional.
           </motion.p>
