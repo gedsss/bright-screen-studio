@@ -178,7 +178,7 @@ export default function Index() {
                   </a>
                 ))}
                 <a
-                  href="https://wa.me/5500000000000"
+                  href="https://wa.me/556536820002"
                   target="_blank"
                   rel="noreferrer"
                   className="flex items-center gap-2 bg-gradient-gold text-primary-foreground px-5 py-3 rounded-full font-semibold w-fit shadow-gold"
