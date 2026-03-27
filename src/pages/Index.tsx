@@ -496,7 +496,7 @@ export default function Index() {
                     icon: Phone,
                     title: "Contato",
                     content: (
-                      <>WhatsApp: (00) 9 0000-0000<br />Email: contato@infocenter.com.br</>
+                      <>WhatsApp: (65) 3682-0002<br />Email: contato@infocenter.com.br</>
                     ),
                   },
                 ].map((item, i) => (
