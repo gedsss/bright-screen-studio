@@ -128,7 +128,7 @@ export default function Index() {
               <Instagram size={20} />
             </a>
             <a
-              href="https://wa.me/5500000000000"
+              href="https://wa.me/556536820002"
               target="_blank"
               rel="noreferrer"
               className="flex items-center gap-2 bg-gradient-gold text-primary-foreground px-4 py-2 rounded-full text-sm font-semibold hover:opacity-90 transition-opacity shadow-gold"
