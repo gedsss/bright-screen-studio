@@ -120,7 +120,7 @@ export default function Index() {
             </button>
 
             <a
-              href="https://www.instagram.com"
+              href="https://www.instagram.com/infocentervg?igsh=MTgxYjI2MG1ya3VwaA=="
               target="_blank"
               rel="noreferrer"
               className="text-muted-foreground hover:text-gold transition-colors"
@@ -128,7 +128,7 @@ export default function Index() {
               <Instagram size={20} />
             </a>
             <a
-              href="https://wa.me/5500000000000"
+              href="https://wa.me/556536820002"
               target="_blank"
               rel="noreferrer"
               className="flex items-center gap-2 bg-gradient-gold text-primary-foreground px-4 py-2 rounded-full text-sm font-semibold hover:opacity-90 transition-opacity shadow-gold"
@@ -178,7 +178,7 @@ export default function Index() {
                   </a>
                 ))}
                 <a
-                  href="https://wa.me/5500000000000"
+                  href="https://wa.me/556536820002"
                   target="_blank"
                   rel="noreferrer"
                   className="flex items-center gap-2 bg-gradient-gold text-primary-foreground px-5 py-3 rounded-full font-semibold w-fit shadow-gold"
@@ -448,7 +448,7 @@ export default function Index() {
               Entre em contato pelo WhatsApp e receba um orçamento personalizado sem compromisso.
             </p>
             <a
-              href="https://wa.me/5500000000000"
+              href="https://wa.me/556536820002"
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-3 bg-gradient-gold text-primary-foreground px-8 sm:px-10 py-4 sm:py-5 rounded-full font-bold text-base sm:text-lg hover:opacity-90 hover:scale-105 transition-all shadow-gold"
@@ -496,7 +496,7 @@ export default function Index() {
                     icon: Phone,
                     title: "Contato",
                     content: (
-                      <>WhatsApp: (00) 9 0000-0000<br />Email: contato@infocenter.com.br</>
+                      <>WhatsApp: (65) 3682-0002<br />Email: contato@infocenter.com.br</>
                     ),
                   },
                 ].map((item, i) => (
@@ -545,7 +545,7 @@ export default function Index() {
           </p>
           <div className="flex items-center gap-4">
             <a
-              href="https://www.instagram.com"
+              href="https://www.instagram.com/infocentervg?igsh=MTgxYjI2MG1ya3VwaA=="
               target="_blank"
               rel="noreferrer"
               className="text-muted-foreground hover:text-gold transition-colors"
@@ -553,7 +553,7 @@ export default function Index() {
               <Instagram size={20} />
             </a>
             <a
-              href="https://wa.me/5500000000000"
+              href="https://wa.me/556536820002"
               target="_blank"
               rel="noreferrer"
               className="text-muted-foreground hover:text-gold transition-colors"
