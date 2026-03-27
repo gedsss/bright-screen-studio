@@ -448,7 +448,7 @@ export default function Index() {
               Entre em contato pelo WhatsApp e receba um orçamento personalizado sem compromisso.
             </p>
             <a
-              href="https://wa.me/5500000000000"
+              href="https://wa.me/556536820002"
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-3 bg-gradient-gold text-primary-foreground px-8 sm:px-10 py-4 sm:py-5 rounded-full font-bold text-base sm:text-lg hover:opacity-90 hover:scale-105 transition-all shadow-gold"
