@@ -120,7 +120,7 @@ export default function Index() {
             </button>
 
             <a
-              href="https://www.instagram.com"
+              href="https://www.instagram.com/infocentervg?igsh=MTgxYjI2MG1ya3VwaA=="
               target="_blank"
               rel="noreferrer"
               className="text-muted-foreground hover:text-gold transition-colors"
