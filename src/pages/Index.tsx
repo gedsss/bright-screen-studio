@@ -545,7 +545,7 @@ export default function Index() {
           </p>
           <div className="flex items-center gap-4">
             <a
-              href="https://www.instagram.com"
+              href="https://www.instagram.com/infocentervg?igsh=MTgxYjI2MG1ya3VwaA=="
               target="_blank"
               rel="noreferrer"
               className="text-muted-foreground hover:text-gold transition-colors"
