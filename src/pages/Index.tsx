@@ -245,7 +245,7 @@ export default function Index() {
               Ver Serviços
             </a>
             <a
-              href="https://wa.me/5500000000000"
+              href="https://wa.me/556536820002"
               target="_blank"
               rel="noreferrer"
               className="border border-gold text-white px-7 py-3.5 sm:px-8 sm:py-4 rounded-full font-bold text-base sm:text-lg hover:bg-gradient-gold hover:border-transparent transition-all duration-200"
