@@ -245,7 +245,7 @@ export default function Index() {
               Ver Serviços
             </a>
             <a
-              href="https://wa.me/5500000000000"
+              href="https://wa.me/556536820002"
               target="_blank"
               rel="noreferrer"
               className="border border-gold text-white px-7 py-3.5 sm:px-8 sm:py-4 rounded-full font-bold text-base sm:text-lg hover:bg-gradient-gold hover:border-transparent transition-all duration-200"
@@ -389,7 +389,7 @@ export default function Index() {
                   <h3 className="font-display text-3xl text-foreground mb-3">{s.title}</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">{s.description}</p>
                   <a
-                    href="https://wa.me/5500000000000"
+                    href="https://wa.me/556536820002"
                     target="_blank"
                     rel="noreferrer"
                     className="inline-flex items-center gap-2 mt-5 text-gold text-sm font-semibold hover:gap-3 transition-all"
@@ -523,7 +523,7 @@ export default function Index() {
             >
               <iframe
                 title="Localização Infocenter"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.1042296455996!2d-46.6557048!3d-23.5615559!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDMzJzQxLjYiUyA0NsKwMzknMjAuNiJX!5e0!3m2!1spt-BR!2sbr!4v1234567890"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3843.5!2d-56.1325!3d-15.6469!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x939a4b1ae4a5c7f%3A0x0!2sR.+24+de+Outubro%2C+31+-+Centro+Norte%2C+V%C3%A1rzea+Grande+-+MT%2C+78110-520!5e0!3m2!1spt-BR!2sbr!4v1700000000000"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
