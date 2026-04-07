@@ -389,7 +389,7 @@ export default function Index() {
                   <h3 className="font-display text-3xl text-foreground mb-3">{s.title}</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">{s.description}</p>
                   <a
-                    href="https://wa.me/5500000000000"
+                    href="https://wa.me/556536820002"
                     target="_blank"
                     rel="noreferrer"
                     className="inline-flex items-center gap-2 mt-5 text-gold text-sm font-semibold hover:gap-3 transition-all"
